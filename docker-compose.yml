@@ -5,6 +5,7 @@ services:
     build: 
       context: .
       dockerfile: dockerfile_automarker
+    container_name: automarker_site
     ports:
       - "3000:3000"
       - "5555:5555"
@@ -23,6 +24,7 @@ services:
     build: 
       context: .
       dockerfile: dockerfile_db
+    container_name: automarker_db
     ports:
       - "5469:5432"
     networks:
@@ -32,6 +34,7 @@ services:
     build: 
       context: .
       dockerfile: dockerfile_api
+    container_name: automarker_compiler
     ports:
       - "8080:8080"
     networks:
