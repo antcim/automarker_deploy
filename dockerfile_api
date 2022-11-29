@@ -23,7 +23,7 @@ ENV PATH $NODE_HOME/bin:$PATH
 RUN curl https://nodejs.org/dist/v$NODE_VERSION/$NODE_PACKAGE.tar.gz | tar -xzC /opt/
 
 # this needs to be removed
-RUN rm -r node_modules
+# RUN rm -r node_modules
 
 RUN npm i
 

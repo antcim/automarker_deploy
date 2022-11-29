@@ -170,7 +170,7 @@ const Task = () => {
         };
         
         try {
-            fetch("http://localhost:8080", {
+            fetch("http://localhost:8080/api", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
