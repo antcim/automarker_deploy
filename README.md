@@ -23,5 +23,5 @@ docker run --net am-net --name automarker_db -p 5469:5432 -e POSTGRES_USER=postg
 ## Third step: Push th DB
 On the Automarker Container in the CLI, run the following command:
 ```bash
-npx prism db push
+npx prisma db push
 ```
