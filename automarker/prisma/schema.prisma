@@ -1,0 +1,78 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+enum Role {
+    USER
+    PROF
+    ADMIN
+}
+
+model User {
+    id            String         @id @default(uuid())
+    name          String
+    lastName      String
+    username      String         @unique
+    hash          String
+    salt          String
+    createdAt     String
+    role          Role           @default(USER)
+    courses       Course[]
+    registrations Registration[]
+    submissions   Submission[]
+}
+
+model Task {
+    id          String       @id @default(uuid())
+    courseId    String
+    title       String
+    assignment  String
+    deadline    String
+    testCase    String
+    hint        String
+    solution    String
+    createdAt   String
+    language    String
+    placeholder String
+    course      Course       @relation(fields: [courseId], references: [id])
+    submissions Submission[]
+}
+
+model Submission {
+    id          String @id @default(uuid())
+    userId      String
+    taskId      String
+    mark        Float
+    workspace   String
+    isSubmitted Boolean
+    submittedAt String
+    user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+    task        Task   @relation(fields: [taskId], references: [id], onDelete: Cascade)
+}
+
+model Registration {
+    id        String @id @default(uuid())
+    userId    String
+    courseId  String
+    createdAt String
+    user      User   @relation(fields: [userId], references: [id])
+    course    Course @relation(fields: [courseId], references: [id])
+}
+
+model Course {
+    id            String         @id @default(uuid())
+    name          String
+    userId        String
+    academicYear  String
+    user          User           @relation(fields: [userId], references: [id]) //prof
+    registrations Registration[]
+    tasks         Task[]
+}

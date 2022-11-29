@@ -1,0 +1,45 @@
+
+
+
+.container {
+ 
+  background-color: rgb(255, 255, 255);
+
+  color: black;
+
+  border-radius: 10px 10px;
+  /*background: -webkit-linear-gradient(to right, rgb(123, 42, 209), rgba(37, 117, 252, 1));
+
+
+  background: linear-gradient(to right, rgb(41, 41, 41), rgb(66, 66, 66));*/
+
+
+
+}
+
+
+.btnhover1 {
+  border: none;
+  border-radius: 50px;
+  width: 200px;
+  height: 60px;
+  background: -webkit-linear-gradient(to right, rgb(241, 119, 37), rgb(216, 30, 17));
+
+
+  background: linear-gradient(to right, rgb(241, 119, 37), rgb(216, 30, 17));
+ 
+}
+
+.btnhover2 {
+  border: none;
+  border-radius: 50px;
+  width: 200px;
+  height: 60px;
+  background: -webkit-linear-gradient(to right, rgb(37, 241, 207), rgb(27, 201, 56));
+
+
+  background: linear-gradient(to right, rgb(37, 241, 207), rgb(27, 201, 56));
+
+ 
+}
+

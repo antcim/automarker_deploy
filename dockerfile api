@@ -1,0 +1,60 @@
+# getting base image ubuntu
+FROM ubuntu:20.04
+
+# install dependencies
+RUN apt-get update && apt-get install -y \
+  ca-certificates \
+  curl
+
+# add site folder
+COPY compiler_api /usr/local/compiler_api
+
+# Setting a new working directory
+WORKDIR /usr/local/compiler_api
+
+# nodejs with npm
+ARG NODE_VERSION=16.18.0
+ARG NODE_PACKAGE=node-v$NODE_VERSION-linux-x64
+ARG NODE_HOME=/opt/$NODE_PACKAGE
+
+ENV NODE_PATH $NODE_HOME/lib/node_modules
+ENV PATH $NODE_HOME/bin:$PATH
+
+RUN curl https://nodejs.org/dist/v$NODE_VERSION/$NODE_PACKAGE.tar.gz | tar -xzC /opt/
+
+# run the site
+RUN rm -r node_modules
+RUN npm i
+
+# install c compiler
+RUN apt install gcc -y
+
+# install c++ compiler
+RUN apt install g++ -y
+
+# install python interpreter
+RUN apt install python3 -y
+
+# install rust compiler
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+ENV PATH="/root/.cargo/bin:${PATH}"
+
+# install java compiler
+RUN apt-get update && \
+    apt-get install -y openjdk-11-jdk ca-certificates-java && \
+    apt-get clean && \
+    update-ca-certificates -f
+ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64/
+RUN export JAVA_HOME
+
+EXPOSE 8080
+
+# run the compiler api
+CMD ["npm", "run", "dev"]
+
+# this is to run the shell
+CMD ["/bin/bash"]
+
+
+
+

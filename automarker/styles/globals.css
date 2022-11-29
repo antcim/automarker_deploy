@@ -1,0 +1,86 @@
+body{
+  background: #4682b4;
+
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body{
+    background: #4682b4;
+
+  }
+}
+
+.red-link{
+  color: rgb(255, 255, 255)!important;
+}
+
+.card-body{
+  background: rgba(0,0,0,.1);
+}
+
+.pc-filter{
+  filter: grayscale(100%);
+}
+
+.form-control:focus {
+  border-color: black;
+  color: white;
+  background: rgb(0, 0, 0);
+  box-shadow: 0 0 0 3px rgba(255, 0, 0, .6)!important;
+}
+
+.automarker_logo::before{
+  background: url('/icon.png') no-repeat;
+  background-size: 23px 23px;
+  display: inline-block;
+  width: 23px; 
+  height: 23px;
+  content:"";
+  margin-bottom: -1px;
+  margin-right: 5px;
+}
+
+.nav-item{ 
+  background: rgba(0,0,0,.2)!important;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  text-align: center;
+  color:white;
+}
+
+.editor_buttons{
+  display: block;
+  margin-bottom: 15px;
+  width: 100%;
+  text-align: right;
+}
+
+.editor_language{
+  width: auto;
+}
+
+.editor_output{
+  border: 1px solid rgb(0, 150, 255);
+  background: rgba(0, 100, 255, .6);
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.editor_error{
+  border: 1px solid red;
+  background: rgba(255, 50, 50, .6);
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+.tabs_column{
+  max-width: 120px!important;
+}
+
+.nav-link {
+  color: white;
+}

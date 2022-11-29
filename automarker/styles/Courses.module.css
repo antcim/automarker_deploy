@@ -1,0 +1,8 @@
+.text {
+    color: #ffffff
+}
+
+.fill {
+    object-fit: cover;
+    height: 200px;
+}
