@@ -22,8 +22,9 @@ ENV PATH $NODE_HOME/bin:$PATH
 
 RUN curl https://nodejs.org/dist/v$NODE_VERSION/$NODE_PACKAGE.tar.gz | tar -xzC /opt/
 
-# run the site
+# this needs to be removed
 RUN rm -r node_modules
+
 RUN npm i
 
 # install c compiler
@@ -46,15 +47,5 @@ RUN apt-get update && \
     update-ca-certificates -f
 ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64/
 RUN export JAVA_HOME
-
-EXPOSE 8080
-
-# run the compiler api
-CMD ["npm", "run", "dev"]
-
-# this is to run the shell
-CMD ["/bin/bash"]
-
-
 
 

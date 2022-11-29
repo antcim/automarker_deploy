@@ -1,0 +1,51 @@
+version: '3'
+
+services:
+  automarker:
+    build: 
+      context: .
+      dockerfile: dockerfile_automarker
+    ports:
+      - "3000:3000"
+      - "5555:5555"
+    networks:
+      - am-net
+    links:
+      - "automarker_db"
+    depends_on:
+      - "automarker_db"
+    command:
+      - '/bin/sh'
+      - '-c'
+      - 'npx prisma db push; npm run dev'
+
+  automarker_db:
+    build: 
+      context: .
+      dockerfile: dockerfile_db
+    ports:
+      - "5469:5432"
+    networks:
+      - am-net
+      
+  compiler_api:
+    build: 
+      context: .
+      dockerfile: dockerfile_api
+    ports:
+      - "8080:8080"
+    networks:
+      - am-net
+    links:
+      - "automarker"
+    depends_on:
+      - "automarker"
+    command:
+      - '/bin/sh'
+      - '-c'
+      - 'npm run dev'
+      
+networks:
+  am-net:
+    driver: bridge
+    name: am-net
