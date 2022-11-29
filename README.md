@@ -10,3 +10,4 @@ Each ot these represents a container in docker.
 ```bash
 docker-compose up
 ```
+#### It may take anywhere from 5 to 10 minutes to build the images with their dependencies.
