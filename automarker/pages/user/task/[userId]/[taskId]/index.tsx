@@ -336,7 +336,7 @@ const Task = () => {
                                                 <Tab.Pane eventKey="second">
                                                     <Row>
                                                         <Col>
-                                                            <p className="text-muted"><i>Language</i>: {language && language}</p>
+                                                            <p className="editor_language"><i>Language</i>: {language && language}</p>
                                                         </Col>
 
                                                         <Col>
