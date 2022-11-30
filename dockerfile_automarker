@@ -26,5 +26,4 @@ RUN curl https://nodejs.org/dist/v$NODE_VERSION/$NODE_PACKAGE.tar.gz | tar -xzC 
 # RUN rm -r /usr/local/automarker/node_modules
 
 RUN npm i
-RUN ls -l /usr/local/automarker
 
