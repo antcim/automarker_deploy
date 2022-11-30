@@ -6,8 +6,8 @@ This web application is developed with the [Next.js](https://nextjs.org/) framew
 Next.js is a [React](https://en.wikipedia.org/wiki/React_(web_framework) "React (web framework)") framework that enables several extra features, including ***server-side*** rendering and generating static websites.
 
 Developing a Next.JS project centers around the two main directories  `pages`  and  `public`  in the root of the application:
--   `pages`  - Associated with a route based on their file name. For example  `pages/about.tsx`  is mapped to  `/about`
--   `public`  - Stores static assets such as images, fonts, etc. Files inside  `public`  directory can then be referenced by code starting from the base URL (`/`).
+-   `pages`  - Each file name in this folder represents an associated route. For example  `pages/prof/profile.tsx`  is mapped to  `/prof/profile`
+-   `public`  - Stores static assets such as images, fonts, etc. Files inside this directory can then be referenced by code starting from the base URL (`/`).
 
 Next.js is built around the concept of  pages. A page is a  React Component exported from a  `.js`,  `.jsx`,  `.ts`, or  `.tsx`  file in the  `pages`  directory. We can even add  ***dynamic route*** parameters with the filename.
 
@@ -15,10 +15,10 @@ Next.js is built around the concept of  pages. A page is a  React Component expo
 ### Layered Architecture Style
 
 Generally, layered architectures consist of four standard layers: 
-- ***presentation***,
-- ***business***,
-- ***persistence***,
-- and ***database***
+- ***presentation***
+- ***business***
+- ***persistence***
+- ***database***
 
 For the project we have chosen the following variant.
 This variant physically separates the presentation layer into its own deployment unit, with the business and persistence layers combined into a second deployment unit. With this variant, the database layer is usually physically separated through an external database or filesystem.
@@ -38,8 +38,7 @@ Similarly, the business layer doesn’t need to be concerned about how to format
 In our project we divided the roles as follows:
 - In the `model` directory there are the functions that interact directly with the database.
 To interact with the database we use ***Prisma***, Prisma is an open source next-generation ORM (Object-Relational Mapping). This directory is identified as the *database layer*.
-- The `api` directory contains all the *bussiness logic* and takes care of managing the requests that arrive directly from the *persistent layer*.
-As mentioned above, we have unified the business layer and the persistence layer into one layer.
+- The `api` directory contains all the *bussiness logic* and takes care of managing the requests that arrive directly from the *persistence layer*. We also made another api since the NextJS runtime does not allow the use of the shell execution module available in the nodejs runtime. This api is run in parallel with the site and is found in the `compiler_api` folder. As mentioned above, we have unified the business layer and the persistence layer into one layer.
 - Finally, the `pages` directory (excluding the `api` directory) contains all the front-end files with which the user interacts. This is identified as the *presentation layer*.
 
 ## Automarker Deployed with Docker Compose
