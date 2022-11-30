@@ -25,7 +25,7 @@ RUN curl https://nodejs.org/dist/v$NODE_VERSION/$NODE_PACKAGE.tar.gz | tar -xzC 
 # this needs to be removed
 # RUN rm -r node_modules
 
-RUN mkdir tmp_code
+RUN mkdir -p tmp_code
 
 RUN npm i
 
