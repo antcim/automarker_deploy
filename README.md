@@ -10,4 +10,12 @@ Each ot these represents a container in docker.
 ```bash
 docker-compose up
 ```
-#### It may take anywhere from 5 to 10 minutes to build the images with their dependencies.
+#### It may take anywhere from 5 to 10 minutes to build the images with their dependencies 
+(it could be better if there is a good connection).
+
+####Import data from .sql file
+If you want to make some tries with existing users and tasks you can import data
+by going to the CLI of the automarker_db container and then typing the following command:
+```bash
+psql -d automarker -U postgres -f /home/dbData.sql
+```
