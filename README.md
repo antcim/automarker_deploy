@@ -19,3 +19,8 @@ by going to the CLI of the automarker_db container and then typing the following
 ```bash
 psql -d automarker -U postgres -f /home/dbData.sql
 ```
+
+#### Account inside the database:
+1. Admin -> Email: admin@admin.it Password: 123
+2. Student -> Email: francesco98vinci@gmail.com Password: 123
+3. Professor -> Email: pietro.ferrara@gmail.com Password: 123
