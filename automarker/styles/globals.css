@@ -84,3 +84,13 @@ body{
 .nav-link {
   color: white;
 }
+
+.editor_language{
+  border: 1px solid rgba(0, 0, 0);
+  background: #848484;
+  margin-top: -4px!important;
+  border-radius: 5px;
+  padding: 8px;
+  display: inline-block;
+  color: white;
+}

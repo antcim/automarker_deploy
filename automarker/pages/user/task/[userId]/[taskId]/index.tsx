@@ -168,7 +168,7 @@ const Task = () => {
             language: language,
             code: editor_text,
         };
-        
+
         try {
             fetch("http://localhost:8080/api", {
                 method: "POST",
@@ -336,7 +336,9 @@ const Task = () => {
                                                 <Tab.Pane eventKey="second">
                                                     <Row>
                                                         <Col>
-                                                            <p className="text-muted"><i>Language</i>: {language && language}</p>
+                                                            <span className="editor_language">
+                                                                Language &lt;&nbsp;{language && language}&nbsp;&gt;
+                                                            </span>
                                                         </Col>
 
                                                         <Col>
