@@ -22,8 +22,9 @@ ENV PATH $NODE_HOME/bin:$PATH
 
 RUN curl https://nodejs.org/dist/v$NODE_VERSION/$NODE_PACKAGE.tar.gz | tar -xzC /opt/
 
-# this needs to be removed
-# RUN rm -r /usr/local/automarker/node_modules
-
+# Installing the dependecies
 RUN npm i
+
+# Building the application
+RUN npm run build
 

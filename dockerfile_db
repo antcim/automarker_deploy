@@ -3,4 +3,5 @@ ENV POSTGRES_USER postgres
 ENV POSTGRES_PASSWORD password
 ENV POSTGRES_DB automarker
 
+# Copy the data file into the home directory in the docker container
 COPY dbData.sql /home
