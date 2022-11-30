@@ -17,7 +17,7 @@ const Header = () => {
             <Navbar.Collapse className="navbar-collapse" id="navbarScroll">
                 {user ? (
                     <Nav className="me-auto">
-                        <Nav.Link href="#">{user.name} {user.lastName}</Nav.Link>
+                        <Nav.Link className="user-nav" href="#">{user.name} {user.lastName}</Nav.Link>
                     </Nav>
                 ) : (
                     <></>
