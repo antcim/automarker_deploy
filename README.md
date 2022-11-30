@@ -72,7 +72,7 @@ psql -d automarker -U postgres -f /home/dbData.sql
 #### Accounts inside the database:
 
 1.  ***Admin***:
-	- Email:  `admin@admin.it`
+	- Email:  `admin@gmail.com`
 	- Password: `123`
 2.  ***Student***:
 	- Email:  `francesco98vinci@gmail.com`
