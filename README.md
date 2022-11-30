@@ -69,17 +69,84 @@ To import this data, run the following command in the `CLI` of the `automarker_d
 psql -d automarker -U postgres -f /home/dbData.sql
 ```
 
-#### Accounts inside the database:
+## Inside the Web App
 
-1.  ***Admin***:
-	- Email:  `admin@gmail.com`
-	- Password: `123`
-2.  ***Student***:
-	- Email:  `francesco98vinci@gmail.com`
-	- Password: `123`
-3.  ***Professor***:
-	- Email:  `pietro.ferrara@gmail.com`
-	- Password: `123`
+The following accounts are present in the *database dump* that can be imported (see the docker section):
+
+-  _**Admin**_:
+    -   Email:  `admin@admin.it`
+    -   Password:  `123`
+-  _**Student**_:
+	- Student 1:
+	   	 -   Email:  `francesco98vinci@gmail.com`
+	    	-   Password:  `123`
+	- Student 2:
+		-   Email:  `antonio.cimino@gmail.com`
+	    	-   Password:  `123`
+	- Student 3:
+		-   Email:  `filippo.bedon@gmail.com`
+	    	-   Password:  `123`
+	- Student 4:
+		-   Email:  `marco.tubia@gmail.com`
+	    	-   Password:  `123`
+	- Student 3:
+		-   Email:  `davide.bresaola@gmail.com`
+	    	-   Password:  `123`
+-  _**Professor**_:
+	- Prof 1:
+	    	-   Email:  `pietro.ferrara@gmail.com`
+	   	 -   Password:  `123`
+	 - Prof 2:
+		 -   Email:  `michele.bugliesi@gmail.com`
+		 -   Password:  `123`
+
+### Prof Side
+Log in as a professor in the login section.
+On the *profile page*, a summary will be displayed for everything concerning the professor's sphere.
+
+The number of students enrolled in each course, the number of prof's courses and the number of ongoing tasks will be displayed.
+
+A  _**professor**_  can:
+-   *create*/*delete*/*modify* a task
+-   *mark* a submission (*only if it expired*)
+-   see all students enrolled in his course (*on development*).
+
+A ***task*** can be:
+- *created*
+- *deleted*
+- *modified* (*only if not expired*)
+
+The *task page* displays the *ongoing tasks* and those *expired* divided by course.
+On this page you can see how many students have *submitted* a task by clicking on the row of the table that corresponds to the task.
+To evaluate (*mark*) a submission, just click on the 💯 button, the code written by the student will be displayed and the possibility to evaluate it.
+
+### Student Side
+
+A  _**Student**_  can:
+-   see the tasks of the courses he is enrolled in
+-   *create*/*modify*/*submit* a solution for a task
+-   *enroll* in a course
+
+On the main page a summary will be displayed for all that concerns the student, ongoing or expired assignments and those submitted.
+
+On the `course` page it is possible to search for and enroll in a course.
+
+In order to carry out a task, just click on it from the *profile page* or from the *course page*.
+
+A task can be:
+- *saved*
+- *runned*
+- *submitted* (*until it expires*)
+
+### Admin Side
+
+An  _**Admin**_  can:
+-  *create*/*delete*/*modify*  **courses**
+-  *assign* a  **professor**  to a  **course**
+-  *create*/*delete*/*modify* a  **professor**  account
+- *create*/*delete*/*modify* an **admin**
+
+On the main page it will be possible to see a summary of the system with the profs, courses and admins.
 
 ## AutoMarker DB Structure
 
