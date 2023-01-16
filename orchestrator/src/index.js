@@ -19,10 +19,10 @@ const corsOptions = {
 app.post( "/api", cors(corsOptions), async (req, res) => {
     const body = await req.body;
 
-    console.log('PRINTING REQUESTED LANGUAGE ' + req.body.language);
-    console.log('PRINTING REQUESTED CODE ' + req.body.code);
+    const MAX_NUM = 100;
+    const NUM_MICROSERVICES = 2;
 
-    const microservice_port = Math.floor(Math.random() * 100) % 1;
+    const microservice_port = Math.floor(Math.random() * MAX_NUM) % NUM_MICROSERVICES;
 
     const url = 'http://localhost:808' + microservice_port + '/api';
 
@@ -37,6 +37,7 @@ app.post( "/api", cors(corsOptions), async (req, res) => {
     let comp_ress;
     // async await syntax
     try {
+        console.log('Sending to Compiler #' + microservice_port);
         let comp_res = await fetch(url, options);
         comp_ress = await comp_res.json();
     } catch (err) {
