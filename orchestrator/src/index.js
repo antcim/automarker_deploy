@@ -24,7 +24,7 @@ app.post( "/api", cors(corsOptions), async (req, res) => {
 
     const microservice_port = Math.floor(Math.random() * MAX_NUM) % NUM_MICROSERVICES;
 
-    const url = 'http://localhost:808' + microservice_port + '/api';
+    const url = 'http://automarker_compiler_8' + microservice_port + ':8080/api';
 
     const options = {
         method: 'POST',
