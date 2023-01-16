@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y \
   curl
 
 # add site folder
-COPY compiler_api /usr/local/orchestrator
+COPY orchestrator /usr/local/orchestrator
 
 # Setting a new working directory
 WORKDIR /usr/local/orchestrator
