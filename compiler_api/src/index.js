@@ -1,4 +1,5 @@
-const e = require('express');
+// compiler microservice
+
 const express = require('express')
 const app = express()
 const port = 8080
@@ -11,7 +12,7 @@ app.use(express.json())
 app.use(cors())
 
 const corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: 'http://localhost',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
@@ -130,5 +131,5 @@ app.post( "/api", cors(corsOptions), async (req, res) => {
 
 // start the Express server
 app.listen( port, () => {
-    console.log( `server started at http://localhost:${ port }` );
+    console.log( `Compiler Microservice started at http://localhost:${ port }` );
 } );
