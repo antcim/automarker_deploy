@@ -30,13 +30,31 @@ services:
     networks:
       - am-net
       
-  compiler_api:
+  compiler_api_80:
     build: 
       context: .
       dockerfile: dockerfile_api
-    container_name: automarker_compiler
+    container_name: automarker_compiler_80
     ports:
       - "8080:8080"
+    networks:
+      - am-net
+    links:
+      - "automarker"
+    depends_on:
+      - "automarker"
+    command:
+      - '/bin/sh'
+      - '-c'
+      - 'npm run dev'
+
+  compiler_api_81:
+    build: 
+      context: .
+      dockerfile: dockerfile_api
+    container_name: automarker_compiler_81
+    ports:
+      - "8081:8080"
     networks:
       - am-net
     links:
