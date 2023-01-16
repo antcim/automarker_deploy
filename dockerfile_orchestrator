@@ -1,0 +1,29 @@
+# getting base image ubuntu
+FROM ubuntu:20.04
+
+# install dependencies
+RUN apt-get update && apt-get install -y \
+  ca-certificates \
+  curl
+
+# add site folder
+COPY compiler_api /usr/local/orchestrator
+
+# Setting a new working directory
+WORKDIR /usr/local/orchestrator
+
+# nodejs with npm
+ARG NODE_VERSION=16.18.0
+ARG NODE_PACKAGE=node-v$NODE_VERSION-linux-x64
+ARG NODE_HOME=/opt/$NODE_PACKAGE
+
+ENV NODE_PATH $NODE_HOME/lib/node_modules
+ENV PATH $NODE_HOME/bin:$PATH
+
+RUN curl https://nodejs.org/dist/v$NODE_VERSION/$NODE_PACKAGE.tar.gz | tar -xzC /opt/
+
+# this needs to be removed
+# RUN rm -r node_modules
+RUN npm i
+
+

@@ -29,7 +29,25 @@ services:
       - "5469:5432"
     networks:
       - am-net
-      
+  
+  orchestrator:
+    build: 
+      context: .
+      dockerfile: dockerfile_orchestrator
+    container_name: automarker_orchestrator
+    ports:
+      - "8079:8079"
+    networks:
+      - am-net
+    links:
+      - "automarker"
+    depends_on:
+      - "automarker"
+    command:
+      - '/bin/sh'
+      - '-c'
+      - 'npm run dev'
+
   compiler_api_80:
     build: 
       context: .
