@@ -38,7 +38,7 @@ Each layer in the architecture forms an abstraction around the work that needs t
 The presentation layer doesn’t need to know or worry about how to get customer data; it only needs to display that information on a screen in a particular format. 
 Similarly, the business layer doesn’t need to be concerned about how to format customer data for display on a screen or even where the customer data is coming from; it only needs to get the data from the persistence layer, perform business logic against the data (such as calculating values or aggregating data), and pass that information up to the presentation layer.
 
-![enter image description here](https://i.ibb.co/02VSSzy/Immagine2.png)
+![image](https://user-images.githubusercontent.com/98947590/212870821-01e0d23e-a9ea-41bc-9825-9b2b3130c3b6.png)
 
 In our project we divided the roles as follows:
 - In the `model` directory there are the functions that interact directly with the database.
