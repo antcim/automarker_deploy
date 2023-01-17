@@ -59,8 +59,16 @@ Each ot these represents a container in docker.
 
 There are however `2 compilers available`, therefore the total number of containers amounts to 5.
 
-### Run the following command
+### Ports in use
+There are a total of 5 ports used, each for a specific container:
+- `port 3000`: the main site container
+- `port 5469`: the postgres db container
+- `port 8079`: the orchestrator container
+- `port 8080`: the 1st compiler container
+- `port 8081`: the 2nd compiler container
 
+### Starting up the project
+Simply run the following command.
 ```docker
 docker-compose up
 ```
