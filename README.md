@@ -3,13 +3,18 @@
 ### Next.JS
 
 This web application is developed with the [Next.js](https://nextjs.org/) framework.
+
 Next.js is a [React](https://en.wikipedia.org/wiki/React_(web_framework) "React (web framework)") framework that enables several extra features, including ***server-side*** rendering and generating static websites.
 
 Developing a Next.JS project centers around the two main directories  `pages`  and  `public`  in the root of the application:
 -   `pages`  - Each file name in this folder represents an associated route. For example  `pages/prof/profile.tsx`  is mapped to  `/prof/profile`
 -   `public`  - Stores static assets such as images, fonts, etc. Files inside this directory can then be referenced by code starting from the base URL (`/`).
 
-Next.js is built around the concept of  pages. A page is a  React Component exported from a  `.js`,  `.jsx`,  `.ts`, or  `.tsx`  file in the  `pages`  directory. We can even add  ***dynamic route*** parameters with the filename.
+Next.js is built around the concept of  pages. 
+
+A page is a  React Component exported from a  `.js`,  `.jsx`,  `.ts`, or  `.tsx`  file in the  `pages`  directory. 
+
+We can even add  ***dynamic route*** parameters within the filename.
 
 
 ### Layered Architecture Style
@@ -43,13 +48,16 @@ To interact with the database we use ***Prisma***, Prisma is an open source next
 
 ## Automarker Deployed with Docker Compose
 
-The project is composed of three parts:
+The project has a total of 4 components:
 
-1.  The site, contained in the automarker folder
-2.  The complier api, contained in the `compiler_api` folder
-3.  The database whose scheme is defined with Prisma in the automarker folder.
+1. The site, contained in the `automarker` folder
+2. The complier api, contained in the `compiler_api` folder
+3. The database whose scheme is defined with Prisma in the `automarker` folder and uses postgres as the chosen db.
+4. The orchestrator, contained in the `orchestrator` folder.
 
 Each ot these represents a container in docker.
+
+There are however `2 compilers available`, therefore the total number of containers amounts to 5.
 
 ### Run the following command
 
