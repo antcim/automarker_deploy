@@ -86,27 +86,27 @@ The following accounts are present in the *database dump* that can be imported (
     -   Password:  `123`
 -  _**Student**_:
 	- Student 1:
-	   	 -   Email:  `francesco98vinci@gmail.com`
-	    	-   Password:  `123`
+		-   Email:  `francesco98vinci@gmail.com`
+	    -   Password:  `123`
 	- Student 2:
 		-   Email:  `antonio.cimino@gmail.com`
-	    	-   Password:  `123`
+	    -   Password:  `123`
 	- Student 3:
 		-   Email:  `filippo.bedon@gmail.com`
-	    	-   Password:  `123`
+	    -   Password:  `123`
 	- Student 4:
 		-   Email:  `marco.tubia@gmail.com`
-	    	-   Password:  `123`
+	    -   Password:  `123`
 	- Student 3:
 		-   Email:  `davide.bresaola@gmail.com`
-	    	-   Password:  `123`
+	    -   Password:  `123`
 -  _**Professor**_:
 	- Prof 1:
-	    	-   Email:  `pietro.ferrara@gmail.com`
-	   	 -   Password:  `123`
+	    -   Email:  `pietro.ferrara@gmail.com`
+	   	-   Password:  `123`
 	 - Prof 2:
-		 -   Email:  `michele.bugliesi@gmail.com`
-		 -   Password:  `123`
+		-   Email:  `michele.bugliesi@gmail.com`
+		-   Password:  `123`
 
 ### Prof Side
 Log in as a professor in the login section.
@@ -124,9 +124,11 @@ A ***task*** can be:
 - *deleted*
 - *modified* (*only if not expired*)
 
-The *task page* displays the *ongoing tasks* and those *expired* divided by course.
+The `task page` displays the *ongoing tasks* and those *expired* divided by course.
+
 On this page you can see how many students have *submitted* a task by clicking on the row of the table that corresponds to the task.
-To evaluate (*mark*) a submission, just click on the 💯 button, the code written by the student will be displayed and the possibility to evaluate it.
+
+To evaluate (*mark*) a submission, just click on the 💯 button so the code written by the student will be displayed.
 
 ### Student Side
 
@@ -135,15 +137,15 @@ A  _**Student**_  can:
 -   *create*/*modify*/*submit* a solution for a task
 -   *enroll* in a course
 
-On the main page a summary will be displayed for all that concerns the student, ongoing or expired assignments and those submitted.
+On the `main page` a summary will be displayed for all that concerns the student, ongoing or expired assignments and those submitted.
 
 On the `course` page it is possible to search for and enroll in a course.
 
-In order to carry out a task, just click on it from the *profile page* or from the *course page*.
+In order to carry out a task, just click on it from the `profile page` or from the `course page`.
 
 A task can be:
 - *saved*
-- *runned*
+- *run*
 - *submitted* (*until it expires*)
 
 ### Admin Side
@@ -243,7 +245,7 @@ enum Role {
 }
 ```
 
-# Instructions for the Automarker team
+# (Developement) Instructions for the Automarker team
 
 ## Automarker Web App 
 
