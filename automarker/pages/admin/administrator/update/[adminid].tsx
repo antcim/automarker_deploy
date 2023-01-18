@@ -131,10 +131,10 @@ const ModifyProfessor = () => {
                                 <Form.Label>Username</Form.Label>
                                 <Form.Control className="mb-3" value={changeUsername} onChange={cambioUsername} id="username" name="username" type="text" required />
 
-                                <Form.Label>Password</Form.Label>
+                                <Form.Label>New password</Form.Label>
                                 <Form.Control className="mb-3" id="password" name="password" type="password" placeholder="Password" required />
 
-                                <Form.Label className="mb-3" style={{ color: "white" }}>Repeat password</Form.Label>
+                                <Form.Label className="mb-3" style={{ color: "white" }}>Repeat new password</Form.Label>
                                 <Form.Control id="repeatpassword" name="repeatpassword" type="password" placeholder="Password" required />
 
                                 <div className="mb-3"></div>

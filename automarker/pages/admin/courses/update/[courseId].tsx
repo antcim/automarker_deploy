@@ -101,7 +101,7 @@ const ModifyCourse = () => {
                                 <Form.Label>Name</Form.Label>
                                 <Form.Control className="mb-3" value={changeName} onChange={cambioNome} id="name" name="name" type="text" required />
 
-                                <Form.Label className="mb-3" >academic year</Form.Label>
+                                <Form.Label className="mb-3" >Academic year</Form.Label>
                                 <Form.Control id="academicyear" value={changeAcemicYear} onChange={cambioAnno} name="academicYear" type="text" required />
 
                                 <div className="mb-3"></div>
