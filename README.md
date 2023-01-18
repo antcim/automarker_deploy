@@ -159,6 +159,8 @@ On the `main page` a summary will be displayed for all that concerns the student
 
 On the `course` page it is possible to search for and enroll in a course.
 
+> Simply press the search button with the empty text field to display all available courses.
+
 In order to carry out a task, just click on it from the `profile page` or from the `course page`.
 
 A task can be:
