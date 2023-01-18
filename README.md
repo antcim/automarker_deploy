@@ -16,8 +16,16 @@ A page is a  React Component exported from a  `.js`,  `.jsx`,  `.ts`, or  `.tsx`
 
 We can even add  ***dynamic route*** parameters within the filename.
 
+### Distributed Architecture Style
+We have a main site developed following the layered architecture style as per 3rd task requirements.
 
-### Layered Architecture Style
+The distributed architecture style has been used with management of the compilation service.
+
+There is an `orchestrator microservice` that dispatches compilation requests to available `compilator microservices`.
+
+For simplicity the orchestrator microservice *randomly chooses* the service to dispatch compilation requests to.
+
+#### The Layered Site
 
 Generally, layered architectures consist of four standard layers: 
 - ***presentation***
@@ -33,9 +41,11 @@ This variant physically separates the presentation layer into its own deployment
 Each layer of the layered architecture style has a specific role and responsibility within the architecture. 
 
 The ***presentation layer*** is responsible for handling all user interface and browser communication logic, whereas the ***business layer*** is responsible for executing specific business rules associated with the request.
+
 Each layer in the architecture forms an abstraction around the work that needs to be done to satisfy a particular business request. 
 
 The presentation layer doesn’t need to know or worry about how to get customer data; it only needs to display that information on a screen in a particular format. 
+
 Similarly, the business layer doesn’t need to be concerned about how to format customer data for display on a screen or even where the customer data is coming from; it only needs to get the data from the persistence layer, perform business logic against the data (such as calculating values or aggregating data), and pass that information up to the presentation layer.
 
 ![image](https://user-images.githubusercontent.com/98947590/212870821-01e0d23e-a9ea-41bc-9825-9b2b3130c3b6.png)
