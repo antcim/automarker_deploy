@@ -65,9 +65,9 @@ The project has a total of 4 components:
 3. The database whose scheme is defined with Prisma in the `automarker` folder and uses postgres as the chosen db.
 4. The orchestrator, contained in the `orchestrator` folder.
 
-Each ot these represents a container in docker.
+Each of these represents a container in docker.
 
-There are however `2 compilers available`, therefore the total number of containers amounts to 5.
+There are however `2 compiler machines available`, therefore the total number of containers amounts to 5.
 
 ### Ports in use
 There are a total of 5 ports used, each for a specific container:
